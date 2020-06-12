@@ -1,0 +1,60 @@
+$field-width : 500px;
+$button-width : 50px;
+
+.home-container img {
+    margin-top: 10rem;
+}
+.home-container {
+    display: grid;
+    justify-content: center;
+}
+
+.smaller-width {
+    width: $field-width;
+}
+
+.custom-button {
+    width: $button-width;
+    height: 32px;
+    border-radius: 0;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: $field-width $button-width;
+}
+
+.moved-up img {
+    width: 200px;
+    margin-top: 3rem;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes stretch {
+    0% {
+      transform: scale(.0);
+    }
+    100% {
+      transform: scale(1.0);
+    }
+}
+
+@keyframes stretch-out {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(0.0);
+    }
+}
+
+.video-container iframe {
+    height: 500px;
+    width: 950px;
+    animation-name: stretch;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    -webkit-animation-name: stretch;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease-in;   
+}

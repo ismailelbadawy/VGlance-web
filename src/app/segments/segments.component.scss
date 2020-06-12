@@ -1,0 +1,21 @@
+div.scroll-segments {
+    width: 950px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scroll-segments a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
+    margin: 10px 0;
+    text-decoration: none;
+    transition: padding 0.3s ease-in;
+    border-right: 0.2px solid rgba($color: #000000, $alpha: 0.5);
+    cursor: pointer;
+}
+
+div.scroll-segments a:hover{
+    padding: 14px 32px;
+    transition: padding 0.3s ease-out;
+}
