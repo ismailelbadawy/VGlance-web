@@ -1,5 +1,8 @@
 div.scroll-segments {
-    width: 950px;
+    width: fit-content;
+    max-width: 950px;
+    margin-right: auto;
+    margin-left: auto;
     overflow: auto;
     white-space: nowrap;
 }
