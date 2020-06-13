@@ -3,6 +3,7 @@ $button-width : 50px;
 
 .home-container img {
     margin-top: 10rem;
+    margin-bottom: 2rem;
 }
 .home-container {
     display: grid;
@@ -39,6 +40,21 @@ $button-width : 50px;
     }
 }
 
+@keyframes slide-down {
+    0% {
+        transform: translateY(0%);
+        transform: scale(1.0);
+    }
+    50% {
+        transform: translateY(20%);
+        transform: scale(0.7);
+    }
+    100% {
+        transform: translateY(0%);
+        transform: scale(1.0);
+    }
+}
+
 @keyframes stretch-out {
     0% {
         transform: scale(1.0);
@@ -57,4 +73,8 @@ $button-width : 50px;
     -webkit-animation-name: stretch;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-timing-function: ease-in;   
+}
+
+.loader {
+    animation: slide-down 1.5s ease-in-out infinite;
 }

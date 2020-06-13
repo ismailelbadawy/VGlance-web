@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { SafePipe } from './pipes/safe.pipe';
 import { SegmentsComponent } from './segments/segments.component';

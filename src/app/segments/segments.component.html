@@ -1,5 +1,5 @@
 <div class="scroll-segments">
-  <a *ngFor="let title of titles">
+  <a *ngFor="let title of titles" (click)="passIndex(titles.indexOf(title))">
     {{title}}
   </a>
 </div>
