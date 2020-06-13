@@ -10,7 +10,7 @@ div.scroll-segments a {
     padding: 14px;
     margin: 10px 0;
     text-decoration: none;
-    transition: padding 0.3s ease-in;
+    transition: padding 0.3s ease-out;
     border-right: 0.2px solid rgba($color: #000000, $alpha: 0.5);
     cursor: pointer;
 }
@@ -20,6 +20,6 @@ div.scroll-segments a:last-child {
 }
 
 div.scroll-segments a:hover{
-    padding: 14px 32px;
+    padding: 14px 48px;
     transition: padding 0.3s ease-out;
 }
