@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
+import { VideosService } from '../services/videos.service';
 
 @Component({
   selector: 'app-home',
@@ -37,16 +38,18 @@ export class HomeComponent implements OnInit {
     156
   ];
 
+  segmenters = [
+    'Text Tiling',
+    'C99'
+  ]
+
+  titlers = [
+    'DTATG',
+    'BERT'
+  ]
+
   startAt = null;
-  constructor() {
-    this.segmentIndex = new BehaviorSubject<number>(-1);
-    this.segmentIndex.subscribe(s => {
-      if (s == -1) {
-        return;
-      }
-      this._seekToSegment(s);
-    });
-  }
+  
 
   ngOnInit() {
     const tag = document.createElement('script');
@@ -54,16 +57,24 @@ export class HomeComponent implements OnInit {
     document.body.appendChild(tag);
   }
 
-  getVideo(): Promise<void> {
+  async getVideo(): Promise<void> {
     this.isLoading = true;
-    return new Promise(resolve => setTimeout(() => {
+    try{
+      let id = this._getId(this.linkFormControl.value as string);
+      let segments = await this._videosService.segmentVideo(id, 'TEXT_TILING', 'DTATG');
+      this.titles = segments.map(s => s.title);
+      this.startTimes = segments.map(s => s.start_time);
       this.video = {
-        id: this._getId(this.linkFormControl.value as string),
-        link: "https://www.youtube.com/embed/" + this._getId(this.linkFormControl.value as string)
+        id : id,
+        link: "https://www.youtube.com/embed/" + id,
+        segments : segments
       };
+
+    } catch (e) {
+      console.log(e);
+    }finally {
       this.isLoading = false;
-      resolve();
-    }, 2000));
+    }
   }
 
   _getId(url) {
@@ -76,7 +87,7 @@ export class HomeComponent implements OnInit {
   }
 
   _seekToSegment(index: number) {
-    console.log('Trying to do anyshit')
+    console.log(`Seeking to ${index}`)
     let wind: any = window;
     if(!this.player) {
       this.player = new wind.YT.Player('yPlayer', {
@@ -99,6 +110,14 @@ export class HomeComponent implements OnInit {
   stateChanged(event) {
 
   }
+
+  constructor(private _videosService : VideosService) {
+    this.segmentIndex = new BehaviorSubject<number>(-1);
+    this.segmentIndex.subscribe(s => {
+      if (s == -1) {
+        return;
+      }
+      this._seekToSegment(s);
+    });
+  }
 }
-
-

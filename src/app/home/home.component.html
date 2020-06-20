@@ -9,8 +9,25 @@
       <mat-hint></mat-hint>
       <mat-label color="primary">Enter a youtube link..</mat-label>
     </mat-form-field>
+    
     <button (click)="getVideo()" class="custom-button" color="accent" mat-flat-button>Go</button>
   </div>
+  <mat-form-field>
+    <mat-label>Segmentation Method</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let method of segmenters" [value]="segmenters">
+        {{method}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Title Method</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let method of titlers" [value]="method">
+        {{method}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
 
 <!-- <div class="home-container" *ngIf="isLoading">
