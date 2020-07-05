@@ -1,13 +1,24 @@
 $field-width : 500px;
 $button-width : 50px;
 
+#vglance-title {
+    text-align: center;
+}
+
 .home-container img {
-    margin-top: 10rem;
+    margin-top: 3rem;
     margin-bottom: 2rem;
 }
 .home-container {
     display: grid;
     justify-content: center;
+}
+
+.home-container-video {
+    display: grid;
+    justify-content: left;
+    padding-left: 1rem;
+    grid-template-columns: auto auto;
 }
 
 .smaller-width {
@@ -29,6 +40,24 @@ $button-width : 50px;
     width: 200px;
     margin-top: 3rem;
     transition: all 0.5s ease-in-out;
+}
+
+.title {
+    font-size: 20pt;
+    font-weight: 300;
+}
+
+.tags {
+    font-size: 18pt;
+    font-weight: 300;
+}
+
+.tags strong {
+    font-weight: 500;
+}
+
+.title-tag-container {
+    padding: 1rem;
 }
 
 @keyframes stretch {

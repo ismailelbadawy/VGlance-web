@@ -1,15 +1,16 @@
 <div class="home-container img-container" [class.moved-up]="video != null" [class.loader]="isLoading">
   <img width="300px" src="assets/logo.png" />
+  <h1 id="vglance-title">VGlance</h1>
 </div>
 
 <div class="home-container" *ngIf="!isLoading && video == null">
   <div class="form-contianer">
     <mat-form-field class="smaller-width">
-      <input matInput [formControl]='linkFormControl'/>
+      <input matInput [formControl]='linkFormControl' />
       <mat-hint></mat-hint>
       <mat-label color="primary">Enter a youtube link..</mat-label>
     </mat-form-field>
-    
+
     <button (click)="getVideo()" class="custom-button" color="accent" mat-flat-button>Go</button>
   </div>
   <mat-form-field>
@@ -34,7 +35,12 @@
   <mat-spinner [strokeWidth]='5' color="accent"></mat-spinner>
 </div> -->
 
-<div class="home-container video-container" *ngIf="!isLoading && video != null">
-  <iframe id='yPlayer' [src]='this.video.link + "?enablejsapi=1" | safe' frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="home-container-video video-container" *ngIf="!isLoading && video != null">
+  <iframe id='yPlayer' [src]='this.video.link + "?enablejsapi=1" | safe' frameborder="0"
+    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="title-tag-container">
+    <h2 class="title">{{currentTitle}}</h2>
+    <h3 class="tags">tags: <strong>{{tags}}</strong></h3>
+  </div>
   <app-segments [titles]='titles' [indexSubject]='segmentIndex' [startTimes]='startTimes'></app-segments>
 </div>

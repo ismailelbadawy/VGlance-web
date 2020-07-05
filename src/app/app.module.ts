@@ -15,13 +15,15 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { SafePipe } from './pipes/safe.pipe';
 import { SegmentsComponent } from './segments/segments.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SafePipe,
-    SegmentsComponent
+    SegmentsComponent,
+    FooterComponent
   ],
   imports: [
     HttpClientModule,
