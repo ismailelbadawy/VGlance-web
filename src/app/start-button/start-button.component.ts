@@ -35,8 +35,8 @@ export class StartButtonComponent implements OnInit {
 
   segmentationFormControl = new FormControl('', Validators.required);
   segmentationMethods = [
-    { name: 'Text Tiling', param: '' },
-    { name: 'Semantic Analysis', param: 'Meow!' }
+    { name: 'Text Tiling', param: 'TEXT_TILING' },
+    { name: 'Semantic Analysis', param: 'WORD_EMBD!' }
   ];
 
   titleFormControl = new FormControl('', Validators.required);
