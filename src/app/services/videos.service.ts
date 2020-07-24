@@ -12,20 +12,30 @@ export class VideosService {
         let items = [
             {
                 text: '',
-                title: 'Trouble',
-                start_time : 0,
-                tags: ['coldplay', 'trouble', 'songs', 'pop'],
+                title: 'Introduction to Deep Learning',
+                start_time: 0,
+                tags: ['deep learning', 'introduction', 'welcome'],
             },
             {
-                start_time : 37,
-                title: 'Fix You',
-                tags : ['coldplay', 'fix you', 'song', 'music'],
-                text : null
+                start_time: 1061,
+                title: 'What is Deep Learning',
+                tags: ['deep learning', 'stanford', 'course'],
+                text: null
+            }, {
+                start_time: 1224,
+                title: 'Machine Learning Application',
+                tags: ['search', 'ai', 'shopping'],
+                text: null
+            }, {
+                start_time: 2403,
+                title: 'Machine Learning Demand',
+                tags: ['machine learning', 'demand', 'applications'],
+                text: null
             },{
-                start_time : 70,
-                title: 'Viva La Vida',
-                tags : ['coldplay', 'viva la vida', 'pop', 'music'],
-                text : null
+                start_time: 2898,
+                title: 'Course Logistics',
+                tags: ['course', 'online', 'teaching'],
+                text: null
             }
         ];
         return new Promise((resolve, reject) => {
@@ -33,7 +43,7 @@ export class VideosService {
                 resolve(items)
             }, 1000);
         });
-        
+
         // let response = await this._client.get<string>(`${environment.backend_url}/get-segments?segmenter=${segmenter}&title_generator=${titler}&video_id=${youtubeId}`, {
         //     headers : {
         //         'Access-Control-Allow-Origin' : 'http://127.0.0.1:8000'

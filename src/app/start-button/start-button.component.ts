@@ -56,6 +56,9 @@ export class StartButtonComponent implements OnInit {
 
 
   analyzeVideo() {
+    if(!(this.titleFormControl.valid && this.segmentationFormControl.valid && this.tagFormControl.valid)) {
+      return;
+    }
     this._loadingSubject.next(true);
     let videoId = this._getId(this.linkFromControl.value);
     this._videoService.segmentVideo(videoId, this.segmentationFormControl.value.param, this.titleFormControl.value.param)
