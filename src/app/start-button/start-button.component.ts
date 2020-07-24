@@ -35,8 +35,8 @@ export class StartButtonComponent implements OnInit {
 
   segmentationFormControl = new FormControl('', Validators.required);
   segmentationMethods = [
-    { name: 'Text Tiling', param: '' },
-    { name: 'Semantic Analysis', param: 'Meow!' }
+    { name: 'Text Tiling', param: 'TEXT_TILING' },
+    { name: 'Semantic Analysis', param: 'WORD_EMBD' }
   ];
 
   titleFormControl = new FormControl('', Validators.required);
@@ -61,6 +61,7 @@ export class StartButtonComponent implements OnInit {
     }
     this._loadingSubject.next(true);
     let videoId = this._getId(this.linkFromControl.value);
+    console.log(this.segmentationFormControl.value);
     this._videoService.segmentVideo(videoId, this.segmentationFormControl.value.param, this.titleFormControl.value.param)
     .then(s => {
       let video : Video = {
