@@ -27,27 +27,31 @@ export class VideoPageComponent implements OnInit {
     const tag = document.createElement('script');
     tag.src = 'https://www.youtube.com/iframe_api';
     document.body.appendChild(tag);
-    this.video = history.state as Video
-  }
-
-  _seekToSegment(index: number) {
-    let wind: any = window;
-    if (!this.player) {
+    this.video = history.state as Video;
+    setTimeout(() => {
+      let wind: any = window;
       this.player = new wind.YT.Player('yPlayer', {
         events: {
-          'onReady': this.readyToPlay.bind(null, index, this.video.segments.map(s => s.start_time)[index]),
+          'onReady': this.readyToPlay.bind(this),
           'onStateChange': this.stateChanged
         }
       })
+    }, 200);
+  }
+
+  _seekToSegment(index: number) {
+    
+    if (!this.player) {
+      
     } else {
       this.player.seekTo(this.video.segments.map(s => s.start_time)[index]);
     }
 
   }
 
-  readyToPlay(times, seek, event) {
-    console.log(seek, event)
-    event.target.seekTo(seek)
+  readyToPlay(input) {
+    console.log(input);
+    this.video.title = this.player.getVideoData().title;
   }
 
   stateChanged(event) {
