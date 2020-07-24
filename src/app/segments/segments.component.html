@@ -1,5 +1,11 @@
 <div class="scroll-segments">
-  <a *ngFor="let title of titles" (click)="passIndex(titles.indexOf(title))">
-    {{title}}
+  <a *ngFor="let segment of segments" (click)="passIndex(segments.indexOf(segment))">
+    <div>
+      <strong class="title">{{segment.title}}</strong>
+      <div class="tags">
+        <div class="tag" *ngFor="let tag of segment.tags">{{tag}}</div>
+      </div>
+    </div>
+    <img class="thumbnail" src='https://img.youtube.com/vi/wP_dNjX7hWo/0.jpg' />
   </a>
 </div>

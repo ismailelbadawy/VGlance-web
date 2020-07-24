@@ -1,0 +1,12 @@
+<div class="video-container">
+  <div class="left">
+    <h2 class="video-title">{{video.title}}</h2>
+    <div class="segments-container">
+      <app-segments [indexSubject]='segmentIndexSubject' [segments]='video.segments'></app-segments>
+    </div>
+  </div>
+  <div class="right">
+    <iframe class="video-frame" id='yPlayer' [src]='this.video.link + "?enablejsapi=1" | safe' frameborder="0"
+      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>

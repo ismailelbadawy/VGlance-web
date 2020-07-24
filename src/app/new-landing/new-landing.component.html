@@ -1,0 +1,25 @@
+<div class="whole-section">
+  <div class="left-grid">
+    <div class="info-container" *ngIf="!isLoading">
+      <h1 id="dh-title">E-learning.<br>Simplified.</h1>
+      <mat-icon>maximize</mat-icon>
+      <p class="social-media-text">Table of contents, but for videos</p>
+      <app-start-button [isLoadingSubject]='isLoadingSubject'></app-start-button>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="loading-spinner" *ngIf='isLoading'>
+      <mat-spinner [strokeWidth]='10'></mat-spinner>
+    </div>
+    <div class="social-media-container">
+    </div>
+  </div>
+  <div class="right-grid">
+    <img id="man-laptop-image" src="../../assets/image.svg"/>
+  </div>
+</div>
+<app-get-started></app-get-started>
+<app-about-us></app-about-us>
+<app-footer></app-footer>

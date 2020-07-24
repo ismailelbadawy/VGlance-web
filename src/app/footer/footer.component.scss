@@ -1,12 +1,21 @@
 .footer-container {
     margin-top: 5rem;
     bottom: 0;
-    background-color: #7383bf;
+    background-color: #434a51;
     color: #fff;
     padding: 5rem;
-    padding-left: 1rem;
 }
 
 h2 {
-    font-weight: 300;
+    font-family: 'Nunito Sans';
+    font-weight: 600;
+}
+
+.logo-image {
+    width: 200px;
+}
+
+p {
+    font-size: 12pt;
+    font-weight: 400;
 }

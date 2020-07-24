@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable, from, BehaviorSubject } from 'rxjs';
+import { Segment } from '../models/segment.model';
 
 @Component({
   selector: 'app-segments',
@@ -10,6 +11,7 @@ export class SegmentsComponent implements OnInit {
   @Input('titles') titles : string[];
   @Input('startTimes') startTimes : string[];
   @Input('indexSubject') indexObservable : BehaviorSubject<number>;
+  @Input('segments') segments : Segment[];
   numbers = [];
   constructor() { 
     

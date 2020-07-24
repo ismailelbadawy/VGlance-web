@@ -11,14 +11,14 @@ $button-width : 50px;
 }
 .home-container {
     display: grid;
-    justify-content: center;
+    justify-content: left;
 }
 
 .home-container-video {
     display: grid;
     justify-content: left;
-    padding-left: 1rem;
-    grid-template-columns: auto auto;
+    padding-left: 2rem;
+    grid-template-columns: 75% 25%;
 }
 
 .smaller-width {
@@ -37,14 +37,26 @@ $button-width : 50px;
 }
 
 .moved-up img {
-    width: 200px;
-    margin-top: 3rem;
+    width: 70px;
+    margin-top: 2rem;
     transition: all 0.5s ease-in-out;
 }
 
 .title {
     font-size: 20pt;
     font-weight: 300;
+}
+
+.moved-up { 
+    display: grid;
+    justify-content: left;
+    padding-left: 2rem;
+    grid-template-columns: auto auto;
+}
+
+.moved-up #vglance-title {
+    margin-top: 3rem;
+    padding-left: 2rem;
 }
 
 .tags {
@@ -95,7 +107,7 @@ $button-width : 50px;
 
 .video-container iframe {
     height: 500px;
-    width: 950px;
+    width: 100%;
     animation-name: stretch;
     animation-duration: 0.5s;
     animation-timing-function: ease-in;

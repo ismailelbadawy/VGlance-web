@@ -1,28 +1,76 @@
 div.scroll-segments {
-    width: fit-content;
-    max-width: 950px;
+    height: fit-content;
+    max-height: 600px;
     margin-right: auto;
     margin-left: auto;
-    overflow: auto;
-    white-space: nowrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }
 
 div.scroll-segments a {
-    display: inline-block;
-    text-align: center;
-    padding: 14px;
-    margin: 10px 0;
+    display: grid;
+    text-align: left;
+    padding: 3rem;
+    padding-right: 0;
+    overflow: hidden;
     text-decoration: none;
     transition: padding 0.3s ease-out;
-    border-right: 0.2px solid rgba($color: #000000, $alpha: 0.5);
     cursor: pointer;
+    grid-template-columns: auto auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 5px 10px 8px #b6b6b6;
 }
 
-div.scroll-segments a:last-child {
-    border-right: 0;
+div.scroll-segments a:hover {
+    box-shadow: 7px 12px 8px #b6b6b6;
+    transition: box-shadow 0.2s ease-in-out;
 }
 
-div.scroll-segments a:hover{
-    padding: 14px 48px;
-    transition: padding 0.3s ease-out;
+.thumbnail {
+    width: 100px;
+    justify-self: flex-end;
+    margin-right: 32px;
+    border-radius: 10px;
+}
+
+.semi-bold {
+    font-weight: 500;
+}
+
+.title {
+    font-weight: 400;
+    font-size : large
+}
+
+.tags {
+    margin-top: 8px;
+    
+}
+
+.tag {
+    display: inline;
+    font-size: 11pt;
+    padding: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 16px;
+    box-sizing: border-box;
+    color: #030303;
+    padding: 4px 10px;
+    margin-right: 10px;
 }

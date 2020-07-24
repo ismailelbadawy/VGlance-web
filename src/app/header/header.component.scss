@@ -1,0 +1,72 @@
+.header {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: left;
+    justify-items: center;
+    align-items: center;
+    padding-top: 4rem;
+    column-gap: 1.5rem;
+    height: fit-content;
+}
+
+.whole-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.left-grid {
+    display: grid;
+    padding-left: 4rem;
+    height: 100%;
+}
+
+.links-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 2rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.links-container a {
+    padding-top: 6px;
+    text-decoration: none;
+    color: black;
+}
+
+.links-container a:hover {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.info-container {
+    display: grid;
+    align-self: center;
+    padding-top: 3rem;
+}
+
+#vglance-title {
+    font-weight: 700;
+    font-size: 18pt;
+}
+
+#dh-title {
+    font-weight: 800;
+    font-size: 32pt;
+}
+
+.logo-image {
+    width: 50px;
+}
+
+.links-container h1 {
+    transition: margin 0.3s ease;
+}
+
+.links-container h1:hover {
+    cursor: pointer;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    transition: margin 0.3s ease;
+}

@@ -38,9 +38,10 @@
 <div class="home-container-video video-container" *ngIf="!isLoading && video != null">
   <iframe id='yPlayer' [src]='this.video.link + "?enablejsapi=1" | safe' frameborder="0"
     allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <app-segments [titles]='titles' [indexSubject]='segmentIndex' [startTimes]='startTimes' [segments]='this.video.segments'></app-segments>
   <div class="title-tag-container">
     <h2 class="title">{{currentTitle}}</h2>
     <h3 class="tags">tags: <strong>{{tags}}</strong></h3>
   </div>
-  <app-segments [titles]='titles' [indexSubject]='segmentIndex' [startTimes]='startTimes'></app-segments>
+
 </div>
