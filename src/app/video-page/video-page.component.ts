@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Video } from '../models/video.model';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-video-page',
@@ -13,7 +14,7 @@ export class VideoPageComponent implements OnInit {
   player: any;
   video: Video = null;
 
-  constructor() {
+  constructor(private _router : Router) {
     this.segmentIndexSubject = new BehaviorSubject<number>(-1);
     this.segmentIndexSubject.subscribe(s => {
       if (s == -1) {
@@ -28,6 +29,9 @@ export class VideoPageComponent implements OnInit {
     tag.src = 'https://www.youtube.com/iframe_api';
     document.body.appendChild(tag);
     this.video = history.state as Video;
+    if(this.video.id == null ) {
+      this._router.navigate(['/'])
+    }
     setTimeout(() => {
       let wind: any = window;
       this.player = new wind.YT.Player('yPlayer', {

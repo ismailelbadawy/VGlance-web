@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
+
 div.scroll-segments {
     height: fit-content;
     max-height: 600px;
@@ -28,7 +30,7 @@ div.scroll-segments a {
     text-decoration: none;
     transition: padding 0.3s ease-out;
     cursor: pointer;
-    grid-template-columns: auto auto;
+    grid-template-columns: 80% 20%;
     margin-bottom: 20px;
     border-radius: 20px;
     background-color: white;
@@ -57,7 +59,7 @@ div.scroll-segments a:hover {
 }
 
 .tags {
-    margin-top: 8px;
+    margin-top: 20px;
     
 }
 
@@ -74,4 +76,12 @@ div.scroll-segments a:hover {
     color: #030303;
     padding: 4px 10px;
     margin-right: 10px;
+}
+
+.segment-number {
+    font-family: 'Sora', sans-serif;
+    color: purple;
+    font-size : 32pt;
+    text-align: left;
+    margin: 0;
 }
