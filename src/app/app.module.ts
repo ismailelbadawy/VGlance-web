@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +24,7 @@ import { StartButtonComponent } from './start-button/start-button.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { MemberCardComponent } from './member-card/member-card.component';
 import { VideoPageComponent } from './video-page/video-page.component';
+import { TimeoutInterceptor, DEFAULT_TIMEOUT } from './interceptors/timeout.interceptor';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,10 @@ import { VideoPageComponent } from './video-page/video-page.component';
     ReactiveFormsModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [
+    [{ provide: HTTP_INTERCEPTORS, useClass: TimeoutInterceptor, multi: true }],
+    [{ provide: DEFAULT_TIMEOUT, useValue: 30000 }]
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

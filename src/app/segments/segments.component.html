@@ -1,7 +1,7 @@
 <div class="scroll-segments">
   <a *ngFor="let segment of segments" (click)="passIndex(segments.indexOf(segment))">
     <div>
-      <strong class="title">{{segment.title}}</strong>
+      <strong class="title">{{this.fixTitle(segment.title)}}</strong>
       <div class="tags">
         <div class="tag" *ngFor="let tag of segment.tags">{{tag}}</div>
       </div>

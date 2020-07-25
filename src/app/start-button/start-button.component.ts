@@ -36,7 +36,7 @@ export class StartButtonComponent implements OnInit {
   segmentationFormControl = new FormControl('', Validators.required);
   segmentationMethods = [
     { name: 'Text Tiling', param: 'TEXT_TILING' },
-    { name: 'Semantic Analysis', param: 'WORD_EMBD!' }
+    { name: 'Semantic Analysis', param: 'WORD_EMBD' }
   ];
 
   titleFormControl = new FormControl('', Validators.required);
@@ -68,7 +68,7 @@ export class StartButtonComponent implements OnInit {
         id : videoId,
         link : "https://www.youtube.com/embed/" + videoId,
         segments : s,
-        title : ''
+        title : 'Introduction to Deep Learning'
       }
       this._router.navigate(['/video'], {state : video});
     }).catch(e => {

@@ -23,4 +23,11 @@ export class SegmentsComponent implements OnInit {
   passIndex(index : number) {    
     this.indexObservable.next(index);
   }
+
+  fixTitle(str : string) {
+    return str.toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+  }
 }
