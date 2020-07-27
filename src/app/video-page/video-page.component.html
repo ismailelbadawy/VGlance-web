@@ -2,7 +2,7 @@
   <div class="left">
     <h2 class="video-title">{{video.title}}</h2>
     <div class="segments-container">
-      <app-segments [indexSubject]='segmentIndexSubject' [segments]='video.segments'></app-segments>
+      <app-segments [currentSegment]='this.currentSegment' [indexSubject]='segmentIndexSubject' [segments]='video.segments'></app-segments>
     </div>
   </div>
   <div class="right">

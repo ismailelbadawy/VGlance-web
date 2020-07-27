@@ -41,14 +41,12 @@ export class StartButtonComponent implements OnInit {
 
   titleFormControl = new FormControl('', Validators.required);
   titleMethods = [
-    { name: 'Encoder Decoder', param: '' },
     { name: 'Universal Sentence Encoder', param: 'USE' },
     { name: 'BERT', param: 'BERT' }
   ];
 
   tagFormControl = new FormControl('', Validators.required);
   tagMethods = [
-    { name: 'Modified DTATG', param: 'DTATG' },
     { name: 'Hybrid Tagging method', param: 'HYBRID' }
   ];
 

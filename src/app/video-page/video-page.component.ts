@@ -13,6 +13,8 @@ export class VideoPageComponent implements OnInit {
   segmentIndexSubject: BehaviorSubject<number>;
   player: any;
   video: Video = null;
+  currentTime = 0;
+  currentSegment = null;
 
   constructor(private _router : Router) {
     this.segmentIndexSubject = new BehaviorSubject<number>(-1);
@@ -40,7 +42,7 @@ export class VideoPageComponent implements OnInit {
           'onStateChange': this.stateChanged
         }
       })
-    }, 200);
+    }, 1000);
   }
 
   _seekToSegment(index: number) {
@@ -49,17 +51,42 @@ export class VideoPageComponent implements OnInit {
       
     } else {
       this.player.seekTo(this.video.segments.map(s => s.start_time)[index]);
+      this.currentSegment = index;
+      this.currentTime = this.video.segments[index].start_time;
     }
 
   }
 
   readyToPlay(input) {
-    console.log(input);
     this.video.title = this.player.getVideoData().title;
+    let timeupdater = setInterval(this.updateTime.bind(this, this), 1000);
+  }
+
+  updateTime(obj) {
+    let oldTime = this.currentTime;
+    if(this.player && this.player.getCurrentTime) {
+      this.currentTime = this.player.getCurrentTime();
+    }
+    if(this.currentTime !== oldTime) {
+      this.mayChangeSegment(this.currentTime);
+    }
   }
 
   stateChanged(event) {
 
+  }
+
+  mayChangeSegment(currentTime : number) {
+    console.log(this.currentTime);
+    console.log(this.video.segments.map(s => s.start_time));
+    for(let i = 0; i < this.video.segments.length; i++) {
+      if(this.currentTime > this.video.segments[i].start_time) {
+        console.log(`Setting ${i}`)
+        this.currentSegment = i;
+      }else {
+        break;
+      }
+    }
   }
 
 }

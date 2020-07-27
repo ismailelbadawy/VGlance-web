@@ -1,5 +1,5 @@
 <div class="scroll-segments">
-  <a *ngFor="let segment of segments" (click)="passIndex(segments.indexOf(segment))">
+  <a *ngFor="let segment of segments" (click)="passIndex(segments.indexOf(segment))" [class.chosen-segment]='segments.indexOf(segment) == this.currentSegment'>
     <div>
       <strong class="title">{{this.fixTitle(segment.title)}}</strong>
       <div class="tags">

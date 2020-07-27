@@ -55,7 +55,7 @@ import { TimeoutInterceptor, DEFAULT_TIMEOUT } from './interceptors/timeout.inte
   ],
   providers: [
     [{ provide: HTTP_INTERCEPTORS, useClass: TimeoutInterceptor, multi: true }],
-    [{ provide: DEFAULT_TIMEOUT, useValue: 30000 }]
+    [{ provide: DEFAULT_TIMEOUT, useValue: 180000 }]
   ],
   bootstrap: [AppComponent]
 })

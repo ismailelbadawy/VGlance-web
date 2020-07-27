@@ -12,6 +12,7 @@ export class SegmentsComponent implements OnInit {
   @Input('startTimes') startTimes : string[];
   @Input('indexSubject') indexObservable : BehaviorSubject<number>;
   @Input('segments') segments : Segment[];
+  @Input('currentSegment') currentSegment : number;
   numbers = [];
   constructor() { 
     
